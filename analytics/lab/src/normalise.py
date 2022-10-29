@@ -3,8 +3,9 @@ from pyspark.sql import functions as F
 from pyspark.sql.types import DoubleType, IntegerType
 
 
-def normalise(inputDf: DataFrame) -> DataFrame:
-    return inputDf.withColumn("SecId_new", F.col("SecId").cast(IntegerType()))          \
+def normalise(df: DataFrame) -> DataFrame:
+    return df                                                                           \
+        .withColumn("SecId_new", F.col("SecId").cast(IntegerType()))                    \
         .drop("SecId")                                                                  \
         .withColumnRenamed("SecId_new", "SecId")                                        \
         .withColumn("PrefixId_new", F.col("PrefixId").cast(IntegerType()))                \
