@@ -64,7 +64,7 @@ def spark_mock_df_transform(spark: SparkSession) -> (DataFrame, DataFrame):
         ],
         schema=StructType([
             StructField("InsDt", TimestampType()),
-            StructField("lastYear", DateType(), False),
+            StructField("LastYear", DateType(), False),
             StructField("IsNew", StringType(), False)
         ])
     )
