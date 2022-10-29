@@ -97,10 +97,10 @@ __pypackages__/
 # Celery stuff
 celerybeat-schedule
 celerybeat.pid
-
+.idea
 # SageMath parsed files
 *.sage.py
-
+result
 # Environments
 .env
 .venv
