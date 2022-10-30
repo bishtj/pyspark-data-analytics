@@ -27,7 +27,9 @@ Total | 128898922.00 | 269109541.40 | 550768746.00 | 1120611.00 | 949897820.40
 input data format:
 http://embs.com/public/html/PostProcessedFileFmt.htm#Sec
 
-###Install steps:
+##How steps
+
+###Install
 
 - Create a virtual environment: virtualenv pyspark-venv
 
@@ -35,12 +37,12 @@ http://embs.com/public/html/PostProcessedFileFmt.htm#Sec
 
 - Install the test's dependency: pip install -r test_requirements.txt
 
-###Test step:
+###Test
 - pytest --cov-report term --cov=analytics analytics/lab/tests
 
-###Run steps:
+###Package/Run
 
-Create a python .whl and submit spark job locally
-
+####Build
 - python setup.py bdist_wheel --universal
+####Run 
 - spark-submit --deploy-mode client --py-files /actual .whl path/pyspark-data-analytics/dist/pyspark_data_analytics_package-0.0.1-py2.py3-none-any.whl analytics/lab/src/app.py
