@@ -16,7 +16,7 @@ if __name__ == '__main__':
         .read                                         \
         .option("delimiter", "|")                     \
         .schema(RAW_SCHEMA)                           \
-        .csv("../resources/input.dat")
+        .csv("analytics/lab/resources/input.dat")
 
     df_normalise = normalise(df_input)
 
@@ -26,4 +26,10 @@ if __name__ == '__main__':
 
     df_matrix = matrix(df_agg)
 
-    df_matrix.coalesce(1).write.mode('overwrite').parquet("result")
+    df_cached = df_matrix.cache()
+
+    df_cached.coalesce(1).write.mode('overwrite').parquet("results")
+
+    df_cached.show()
+
+    df_cached.unpersist()
