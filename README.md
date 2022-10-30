@@ -43,4 +43,4 @@ http://embs.com/public/html/PostProcessedFileFmt.htm#Sec
 Create a python .whl and submit spark job locally
 
 - python setup.py bdist_wheel --universal
-- spark-submit --deploy-mode client --py-files /path/pyspark-data-analytics/dist/pyspark_data_analytics_package-0.0.1-py2.py3-none-any.whl analytics/lab/src/app.py
+- spark-submit --deploy-mode client --py-files /actual .whl path/pyspark-data-analytics/dist/pyspark_data_analytics_package-0.0.1-py2.py3-none-any.whl analytics/lab/src/app.py
