@@ -27,15 +27,12 @@ Total | 128898922.00 | 269109541.40 | 550768746.00 | 1120611.00 | 949897820.40
 input data format:
 http://embs.com/public/html/PostProcessedFileFmt.htm#Sec
 
-###Local test run steps:
+###Install and run steps:
 
-- install pyspark
+- Create a virtual environment: virtualenv pyspark-venv
 
-- pip install pytest
+- Activate the virtual environment: source pyspark-ven/bin/activate
 
-- pip install chispa
+- Install the test's dependency: pip install -r test_requirements.txt
 
-- setup env variable "SPARK_HOME" 
-
-  * export SPARK_HOME=/Users/actual path/spark-version-bin-hadoop version
-  * example export SPARK_HOME=/Users/user_name/projects/spark-3.0.1-bin-hadoop2.7
+- pytest --cov-report term --cov=analytics analytics/lab/tests
