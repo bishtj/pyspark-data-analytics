@@ -3,9 +3,13 @@
 Write a Spark application that will read security_raw and create a new table called security_normalised.
 This table should be in csv format with header columns and it will be identical to security_raw except of the following changes:
 Drop the columns: PrefixId, InsSrc, UpdSrc
+
 Create a new column called: NormalisationDate -> this will be the timestamp of the insertion time of this record to your new table (UTC).
+
 Create a new boolean column called: IsNew. If the InsDt column of the record is in the last 12 months then the value will be true, otherwise false.
+
 Aggregate the data in the security_normalised table by Prefix, Product and issue year calculating the minimum, maximum and sum of the issue amount.
+
 Store the aggregated data in a table called prefix_product_issue_year.
 
 Generate a matrix of the sum of the Issue Amount column by Prefix and Product.
@@ -23,8 +27,15 @@ Total | 128898922.00 | 269109541.40 | 550768746.00 | 1120611.00 | 949897820.40
 input data format:
 http://embs.com/public/html/PostProcessedFileFmt.htm#Sec
 
-Local test run steps:
+###Local test run steps:
 
-install pyspark
-pip install chispa
-setup SPARK_HOME=/Users/<Path>/spark-3.0.1-bin-hadoop2.7
+- install pyspark
+
+- pip install pytest
+
+- pip install chispa
+
+- setup env variable "SPARK_HOME" 
+
+  * export SPARK_HOME=/Users/actual path/spark-version-bin-hadoop version
+  * example export SPARK_HOME=/Users/user_name/projects/spark-3.0.1-bin-hadoop2.7
