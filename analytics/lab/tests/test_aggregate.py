@@ -16,7 +16,7 @@ def order(df: DataFrame, orderCols: list):
 
 
 @pytest.mark.spark
-def test_transform(spark: SparkSession, spark_mock_df_aggregate):
+def test_aggregate_happy_scenario(spark: SparkSession, spark_mock_df_aggregate):
     # ARRANGE
     df, expect = spark_mock_df_aggregate
 

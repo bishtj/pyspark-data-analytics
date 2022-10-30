@@ -15,7 +15,7 @@ def order(df: DataFrame, orderCol: string):
 
 
 @pytest.mark.spark
-def test_matrix(spark: SparkSession, spark_mock_df_matrix):
+def test_matrix_happy_scenario(spark: SparkSession, spark_mock_df_matrix):
     # ARRANGE
     df, expect = spark_mock_df_matrix
 

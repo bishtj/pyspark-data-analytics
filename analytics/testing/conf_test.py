@@ -59,12 +59,11 @@ def spark_mock_df_transform(spark: SparkSession) -> (DataFrame, DataFrame):
 
     expect = spark.createDataFrame(
         data=[
-            (datetime(2022, 1, 1, 00, 00, 00), date(2012, 10, 31), "true"),
-            (datetime(1994, 1, 1, 00, 00, 00), date(2012, 10, 31), "false")
+            (datetime(1994, 1, 1, 00, 00, 00), "false"),
+            (datetime(2022, 1, 1, 00, 00, 00), "true")
         ],
         schema=StructType([
             StructField("InsDt", TimestampType()),
-            StructField("LastYear", DateType(), False),
             StructField("IsNew", StringType(), False)
         ])
     )

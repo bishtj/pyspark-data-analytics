@@ -15,15 +15,15 @@ def order(df: DataFrame, orderCol: string):
 
 
 @pytest.mark.spark
-def test_transform(spark: SparkSession, spark_mock_df_transform):
+def test_transform_happy_scenario(spark: SparkSession, spark_mock_df_transform):
     # ARRANGE
     df, expect = spark_mock_df_transform
 
     # ACT
     actual = transform(df)
 
+
     cols = expect.columns
     order_col = "InsDt"
-
     # ASSERT
     assert_df_equality(order(actual.select(cols), order_col), order(expect, order_col))

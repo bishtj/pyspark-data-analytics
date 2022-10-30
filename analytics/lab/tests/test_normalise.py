@@ -9,7 +9,7 @@ from analytics.lab.src.normalise import normalise
 from pyspark.sql import DataFrame, SparkSession
 
 @pytest.mark.spark
-def test_normalise(spark: SparkSession, spark_mock_df_normalise):
+def test_normalise_happy_scenario(spark: SparkSession, spark_mock_df_normalise):
 
     # ARRANGE
     df, expect = spark_mock_df_normalise
