@@ -28,14 +28,13 @@ setuptools.setup(
     python_requires='>=3.6',
     extras_require={
         'build': ['pip',
-                  'pytest==6.0.1',
-                  'pytest-xdist==2.0.0',
-                  'pytest-cov==2.10.1',
-                  'pytest-html==2.1.1',
-                  'pytest-flake8==1.0.7',
+                  'pytest==7.2.0',
+                  'pytest-xdist==3.0.2',
+                  'pytest-cov==4.0.0',
+                  'pytest-html==3.2.0',
+                  'pytest-flake8==1.1.1',
                   'setuptools==40.6.3',
                   'wheel',
-                  'pandas==latest'
         ],
     }
 )

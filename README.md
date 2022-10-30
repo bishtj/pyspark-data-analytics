@@ -27,7 +27,7 @@ Total | 128898922.00 | 269109541.40 | 550768746.00 | 1120611.00 | 949897820.40
 input data format:
 http://embs.com/public/html/PostProcessedFileFmt.htm#Sec
 
-###Install and run steps:
+###Install steps:
 
 - Create a virtual environment: virtualenv pyspark-venv
 
@@ -35,4 +35,6 @@ http://embs.com/public/html/PostProcessedFileFmt.htm#Sec
 
 - Install the test's dependency: pip install -r test_requirements.txt
 
+###Test step:
 - pytest --cov-report term --cov=analytics analytics/lab/tests
+
